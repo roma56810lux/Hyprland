@@ -1,0 +1,98 @@
+/* ============================================
+   Waybar — тёмная компактная тема, 26px
+   Без blur-эффектов ради производительности в ВМ
+   ============================================ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(11, 13, 19, 0.92);
+    color: #c0caf5;
+}
+
+tooltip {
+    background-color: #16161e;
+    color: #c0caf5;
+    border: 1px solid #7aa2f7;
+    border-radius: 4px;
+}
+
+/* --- Левые модули --- */
+
+#workspaces {
+    padding: 0 6px;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    margin: 3px 1px;
+    color: #565f89;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    color: #7aa2f7;
+}
+
+#workspaces button.urgent {
+    color: #f7768e;
+}
+
+#workspaces button:hover {
+    box-shadow: none;
+    color: #c0caf5;
+}
+
+#window {
+    padding: 0 10px;
+    color: #9aa5ce;
+}
+
+/* --- Центр --- */
+
+#clock {
+    padding: 0 12px;
+    color: #7aa2f7;
+}
+
+/* --- Правые модули --- */
+
+#language,
+#cpu,
+#memory,
+#pulseaudio,
+#tray {
+    padding: 0 10px;
+    margin: 3px 0;
+}
+
+#language {
+    color: #bb9af7;
+}
+
+#cpu {
+    color: #e0af68;
+}
+
+#memory {
+    color: #9ece6a;
+}
+
+#pulseaudio {
+    color: #7dcfff;
+}
+
+#pulseaudio.muted {
+    color: #f7768e;
+}
+
+#tray {
+    padding: 0 8px;
+}

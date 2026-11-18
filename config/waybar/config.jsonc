@@ -1,0 +1,77 @@
+{
+  // ============================================
+  //  Waybar — компактная тёмная панель (26px)
+  //  Слева:  воркспейсы + заголовок окна
+  //  Центр:  часы
+  //  Справа: раскладка, CPU, RAM, звук, трей
+  // ============================================
+
+  "layer": "top",
+  "position": "top",
+  "height": 26,
+  "spacing": 4,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["hyprland/language", "cpu", "memory", "pulseaudio", "tray"],
+
+  // --- Воркспейсы ---
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+
+  // --- Заголовок активного окна ---
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 80
+  },
+
+  // --- Часы и дата ---
+  "clock": {
+    "interval": 30,
+    "format": "{:%a %d.%m.%Y  %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  // --- Раскладка клавиатуры (клик — переключение) ---
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-ru": "RU",
+    "on-click": "hyprctl switchxkblayout all next",
+    "tooltip": false
+  },
+
+  // --- Загрузка CPU ---
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%",
+    "tooltip-format": "CPU: {usage}%"
+  },
+
+  // --- RAM (критично при 3.8 ГБ) ---
+  "memory": {
+    "interval": 5,
+    "format": "󰍛 {used:0.1f}G",
+    "tooltip-format": "RAM: {used:0.1f}G из {total:0.1f}G ({percentage}%)"
+  },
+
+  // --- Громкость (wpctl) ---
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 Muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "tooltip": false
+  },
+
+  // --- Системный трей ---
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8
+  }
+}
