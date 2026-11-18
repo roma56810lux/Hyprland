@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Локальные обои (личные картинки не коммитим)
+config/hypr/background.jpg
+config/hypr/wallpaper.png
+
+# Бэкапы и логи
+*.bak
+*.log
